@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Passaggio</title>
+    <link rel="icon" href="../img/loggo.png" type="image/png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<div class="container">
+    <img src="/img/logo.png" alt="Logo da Empresa" class="logo">
+
+    <h2>Bem-vindo(a) ao sistema de controle de ponto!</h2>
+
+    <ul class="menu">
+        <li><a href="/cadastro/bt-cadastro.html">Cadastro</a></li>
+        <li><a href="/ponto/registro-ponto.html">Ponto</a></li>
+        <li><a href="/justificativa/justificativa.html">Justificativa</a></li>
+        <li><a href="/relatorio/bt-relatorio.html">Relatório</a></li>
+        <li><a href="/login/login.html" id="logout">Sair</a></li>
+    </ul>
+</div>
+<script src="../js/dashboard.js"></script>
+
+<script>
+    document.addEventListener("keyup", function(event) {
+        if (event.key === "Escape") {
+            window.location.href = "/login/login.html";
+        }
+    });
+</script>
+
+</body>
+</html>

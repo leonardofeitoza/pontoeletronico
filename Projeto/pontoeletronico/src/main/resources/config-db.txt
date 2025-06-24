@@ -1,0 +1,4 @@
+url=jdbc:sqlserver://Leonardo;databaseName=PontoEletronico;encrypt=true;trustServerCertificate=true
+username=t4u
+password=852456
+driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver

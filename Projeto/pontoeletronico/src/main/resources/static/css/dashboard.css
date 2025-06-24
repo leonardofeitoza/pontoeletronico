@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fundo branco */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.logo {
+    width: 100px; /* Largura da logo */
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #000; /* Cor preta */
+    margin-bottom: 20px;
+}
+
+ul.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.menu li {
+    margin: 10px 0;
+}
+
+ul.menu li a {
+    display: block;
+    padding: 10px;
+    background-color: #28a745; /* Verde */
+    color: #ffffff; /* Branco */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+ul.menu li a:hover {
+    background-color: #218838; /* Verde mais escuro */
+}
+
+ul.menu li a#logout {
+    background-color: #28a745; /* Verde padrão */
+}
+
+ul.menu li a#logout:hover {
+    background-color: #218838; /* Verde mais escuro padrão */
+}
+

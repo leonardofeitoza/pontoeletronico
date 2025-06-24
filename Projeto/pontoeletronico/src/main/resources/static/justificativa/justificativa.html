@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Passaggio</title>
+    <link rel="icon" href="../img/loggo.png" type="image/png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Justificativa</title>
+    <link rel="stylesheet" href="../css/justificativa.css">
+</head>
+<body>
+<div class="container">
+    <h2>Registro de Justificativa</h2>
+    <form id="form-justificativas">
+        <div class="linha-id-nome">
+            <div class="campo-id">
+                <label for="id-funcionario">ID:</label>
+                <input type="text" id="id-funcionario" name="id-funcionario" placeholder="ID" readonly>
+            </div>
+            <div class="campo-nome-funcionario">
+                <label for="nome-funcionario">Nome do Funcionário:</label>
+                <div class="nome-funcionario-container">
+                    <input type="text" id="nome-funcionario" name="nome-funcionario" placeholder="Selecione o funcionário" readonly>
+                    <div class="seta-dropdown" onclick="mostrarFuncionarios()">▼</div>
+                    <div id="dropdown-container" class="lista-funcionarios">
+                        <input type="text" id="filtro-funcionarios" placeholder="Filtrar funcionários...">
+                        <ul id="lista-funcionarios"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <label for="data-justificativa">Data da Justificativa:</label>
+        <input type="date" id="data-justificativa" name="data-justificativa">
+
+        <label for="motivo-justificativa">Motivo da Justificativa:</label>
+        <textarea id="motivo-justificativa" name="motivo-justificativa" placeholder="Digite o motivo da justificativa" rows="4"></textarea>
+
+        <label for="tipo-justificativa">Tipo de Justificativa:</label>
+        <select id="tipo-justificativa" name="tipo-justificativa">
+            <option value="">Selecione o tipo</option>
+            <option value="Atraso">Atraso</option>
+            <option value="Falta">Falta</option>
+            <option value="Férias">Férias</option>
+            <option value="Folga">Folga</option>
+            <option value="Saída Antecipada">Saída Antecipada</option>
+        </select>
+
+        <!-- Botões alinhados na mesma linha -->
+        <div class="botao-container">
+            <!-- Botão Cadastrar -->
+            <button type="submit" id="btn-registrar">Registrar</button>
+            <!-- Botão Alterar que redireciona para a tela atualizar-funcionario.html -->
+            <button type="button" id="btn-alterar" onclick="location.href='/justificativa/atualizar-justificativa.html'">Alterar</button>
+            <!-- Botão Voltar que redireciona para bt-cadastro.html -->
+            <button type="button" id="btn-voltar" onclick="location.href='/dashboard/dashboard.html'">Voltar</button>
+        </div>
+
+    </form>
+</div>
+<script src="../js/justificativa.js"></script>
+</body>
+</html>
+
+

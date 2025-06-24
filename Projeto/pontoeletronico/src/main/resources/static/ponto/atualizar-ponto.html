@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Passaggio</title>
+    <link rel="icon" href="../img/loggo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ponto</title>
+    <link rel="stylesheet" href="../css/atualizar-ponto.css">
+</head>
+<body>
+<div class="container">
+    <h2>Atualizar Ponto</h2>
+    <form id="form-alterar-ponto">
+        <div class="linha-id-nome">
+            <div class="campo-id">
+                <label for="id-funcionario">ID:</label>
+                <input type="text" id="id-funcionario" name="id-funcionario" placeholder="ID" readonly>
+            </div>
+            <div class="campo-nome-funcionario">
+                <label for="nome-funcionario">Nome do Funcionário:</label>
+                <div class="nome-funcionario-container">
+                    <input type="text" id="nome-funcionario" name="nome-funcionario" placeholder="Selecione o funcionário" readonly>
+                    <div class="seta-dropdown" onclick="mostrarFuncionarios()">▼</div>
+                    <div id="dropdown-container" class="lista-funcionarios">
+                        <input type="text" id="filtro-funcionarios" placeholder="Filtrar funcionários...">
+                        <ul id="lista-funcionarios"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-container">
+            <label for="data">Data:</label>
+            <div class="data-input-container">
+                <input type="date" id="data" name="data" placeholder="Digite a data">
+                <button type="button" id="btn-buscar-data">Buscar</button>
+            </div>
+        </div>
+
+        <label for="hora-entrada">Hora de Entrada:</label>
+        <input type="time" id="hora-entrada" name="hora-entrada">
+
+        <label for="hora-saida">Hora de Saída:</label>
+        <input type="time" id="hora-saida" name="hora-saida">
+
+        <!-- Botões alinhados na mesma linha -->
+        <div class="botao-container">
+            <button type="button" id="btn-lista">Lista</button>
+            <button type="submit" id="btn-atualizar">Atualizar</button>
+            <button type="button" id="btn-excluir" onclick="location.href='/ponto/atualizar-ponto.html'">Excluir</button>
+            <button type="button" id="btn-voltar" onclick="location.href='/ponto/registro-ponto.html'">Voltar</button>
+        </div>
+
+        <!-- Modal para exibir os registros de ponto -->
+        <div id="modal-ponto" class="modal">
+            <div class="modal-content">
+                <h3 id="titulo-ponto">Ponto do Funcionário</h3>
+                <table id="tabela-ponto">
+                    <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora de Entrada</th>
+                        <th>Hora de Saída</th>
+                        <th>Total de Horas Trabalhadas</th>
+                        <th>Total de Horas Extras</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+    <!-- Novo container para exibir a lista via botão "Lista" -->
+    <div id="lista-funcionarios-btn-container" class="lista-funcionarios-btn">
+        <input type="text" id="filtro-funcionarios-btn" placeholder="Filtrar funcionários...">
+        <ul id="lista-funcionarios-btn"></ul>
+    </div>
+</div>
+<script src="../js/atualizar-ponto.js"></script>
+</body>
+</html>

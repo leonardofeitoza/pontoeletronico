@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Passaggio</title>
+  <link rel="icon" href="../img/loggo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualizar Justificativa</title>
+  <link rel="stylesheet" href="../css/atualizar-justificativa.css">
+</head>
+<body>
+<div class="container">
+  <h2>Atualizar Justificativa</h2>
+  <form id="form-alterar-justificativas">
+    <div class="linha-id-nome">
+      <div class="campo-id">
+        <label for="id-funcionario">ID:</label>
+        <input type="text" id="id-funcionario" name="id-funcionario" placeholder="ID" readonly>
+      </div>
+      <div class="campo-nome-funcionario">
+        <label for="nome-funcionario">Nome do Funcionário:</label>
+        <div class="nome-funcionario-container">
+          <input type="text" id="nome-funcionario" name="nome-funcionario" placeholder="Selecione o funcionário" readonly>
+          <div class="seta-dropdown" onclick="mostrarFuncionarios()">▼</div>
+          <div id="dropdown-container" class="lista-funcionarios">
+            <input type="text" id="filtro-funcionarios" placeholder="Filtrar funcionários...">
+            <ul id="lista-funcionarios"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" id="cod-justificativa" name="cod-justificativa">
+
+    <div class="data-input-container">
+      <label for="data" class="label-data">Data da Justificativa:</label>
+      <div class="data-field-container">
+        <input type="date" id="data" name="data">
+        <button type="button" id="btn-buscar-data">Buscar</button>
+      </div>
+    </div>
+
+    <label for="motivo-justificativa">Motivo da Justificativa:</label>
+    <textarea id="motivo-justificativa" name="motivo-justificativa" placeholder="Digite o motivo da justificativa" rows="4"></textarea>
+
+    <label for="tipo-justificativa">Tipo de Justificativa:</label>
+    <select id="tipo-justificativa" name="tipo-justificativa">
+      <option value="">Selecione o tipo</option>
+      <option value="Atraso">Atraso</option>
+      <option value="Falta">Falta</option>
+      <option value="Férias">Férias</option>
+      <option value="Folga">Folga</option>
+      <option value="Saída Antecipada">Saída Antecipada</option>
+    </select>
+
+    <!-- Botões alinhados na mesma linha -->
+    <div class="botao-container">
+      <button type="button" id="btn-lista">Lista</button>
+      <button type="submit" id="btn-atualizar">Atualizar</button>
+      <button type="button" id="btn-excluir">Excluir</button>
+      <button type="button" id="btn-voltar" onclick="location.href='/justificativa/justificativa.html'">Voltar</button>
+    </div>
+  </form>
+</div>
+
+<!-- Novo container para exibir a lista via botão "Lista" -->
+<div id="lista-funcionarios-btn-container" class="lista-funcionarios-btn">
+  <input type="text" id="filtro-funcionarios-btn" placeholder="Filtrar funcionários...">
+  <ul id="lista-funcionarios-btn"></ul>
+</div>
+
+<!-- Modal para exibir a lista de justificativas -->
+<div id="modal-justificativas" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="fecharModal()">&times;</span>
+    <h3>Justificativas do Funcionário</h3>
+    <div id="titulo-justificativas" style="text-align: center; font-weight: bold; font-size: 18px; margin-bottom: 10px;"></div>
+    <table id="tabela-justificativas">
+      <thead>
+      <tr>
+        <th>Data</th>
+        <th>Motivo</th>
+        <th>Tipo</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="../js/atualizar-justificativa.js"></script>
+</body>
+</html>

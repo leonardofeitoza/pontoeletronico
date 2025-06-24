@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Passaggio</title>
+    <link rel="icon" href="../img/loggo.png" type="image/png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="../css/bt-relatorio.css">
+</head>
+<body>
+<div class="container">
+    <div class="button-container">
+        <button onclick="location.href='/relatorio/r-funcionario.html'">Funcionário</button>
+        <button onclick="location.href='/relatorio/r-ponto.html'">Ponto</button>
+        <button onclick="location.href='/relatorio/r-justificativa.html'">Justificativa</button>
+        <button onclick="location.href='/relatorio/r-usuario.html'">Usuário</button>
+        <button onclick="location.href='/dashboard/dashboard.html'">Voltar</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("keyup", function(event) {
+        if (event.key === "Escape") {
+            window.location.href = "/dashboard/dashboard.html";
+        }
+    });
+</script>
+
+</body>
+</html>

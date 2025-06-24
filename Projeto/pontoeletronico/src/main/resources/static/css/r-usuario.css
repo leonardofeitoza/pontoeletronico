@@ -1,0 +1,249 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 550px; /* Mantém a mesma largura horizontal */
+    width: 100%;
+    min-height: 350px; /* Mantém o espaço vertical mínimo */
+    padding: 30px 30px; /* Espaçamento interno do container */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h3 {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Agrupa ID e Nome do Funcionário em uma única linha */
+.linha-id-nome {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    /* Aumenta o espaçamento entre o título e os campos */
+    margin-top: 90px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Campo ID com largura fixa */
+.campo-id {
+    flex: 0 0 80px;
+}
+
+.campo-id label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo-id input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Campo Nome do Funcionário com largura maior */
+.campo-nome-funcionario {
+    flex: 0 0 415px;
+    position: relative;
+}
+
+.campo-nome-funcionario label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.nome-funcionario-container {
+    position: relative;
+}
+
+.nome-funcionario-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Ícone de seta no campo "Nome do Funcionário" */
+.seta-dropdown {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-70%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Dropdown da lista de funcionários */
+.lista-funcionarios {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 250px;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+}
+
+.lista-funcionarios li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.lista-funcionarios li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ajuste para o dropdown expandir para cima, com top negativo */
+#dropdown-container {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 280px;
+    max-height: 280px;
+    overflow-y: auto;
+    display: none;
+    z-index: 9999;
+}
+
+/* Campo de busca dentro do dropdown */
+#dropdown-container #filtro-funcionarios {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#dropdown-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#dropdown-container ul li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#dropdown-container ul li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Contêiner para alinhar os botões */
+.botao-container {
+    display: flex;
+    justify-content: space-between; /* Adiciona espaço uniforme entre os botões */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* Configuração de largura uniforme para os botões */
+#btn-visualizar-relatorio, #btn-visualizar-relatorio-global, #btn-voltar {
+    flex: 1; /* Faz com que todos os botões ocupem a mesma largura */
+}
+
+/* Modal para exibição do PDF em tela inteira */
+.pdf-modal {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    z-index: 9999; /* Fica acima de todos os elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Fundo semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-modal-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-pdf {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close-pdf:hover {
+    color: red;
+}
+
+#relatorio-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

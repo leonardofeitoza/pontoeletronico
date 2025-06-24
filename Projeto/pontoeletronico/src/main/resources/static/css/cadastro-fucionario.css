@@ -1,0 +1,123 @@
+/* Estilização do corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão para o texto */
+    background-color: #fff; /* Define o fundo branco para a página */
+    margin: 0; /* Remove a margem padrão do corpo */
+    padding: 10px; /* Adiciona um espaçamento interno de 10px */
+    display: flex; /* Define um layout flexível */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    height: 100vh; /* Define a altura do corpo para ocupar a tela inteira */
+}
+
+/* Estilização do contêiner principal */
+.container {
+    max-width: 600px; /* Define a largura máxima do contêiner */
+    width: 100%; /* Faz o contêiner ocupar 100% da largura disponível */
+    padding: 15px; /* Adiciona espaçamento interno de 15px */
+    background-color: #fff; /* Define o fundo branco para o contêiner */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao contêiner */
+    border-radius: 8px; /* Define bordas arredondadas */
+    text-align: center; /* Centraliza o texto dentro do contêiner */
+}
+
+/* Estilização do título */
+h2 {
+    margin-bottom: 10px; /* Adiciona um espaçamento inferior ao título */
+    color: #000; /* Define a cor preta para o texto do título */
+}
+
+/* Agrupa os campos de ID e Nome em uma única linha */
+.linha-id-nome {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os campos */
+    align-items: flex-end; /* Alinha os campos pela base dos labels */
+    margin-bottom: 20px;
+}
+
+.campo-id {
+    flex: 0 0 80px; /* Largura fixa para o campo ID */
+}
+
+.campo-id label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo-id input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.campo-nome-funcionario {
+    flex: 1; /* Ocupa o restante do espaço */
+    position: relative;
+}
+
+.campo-nome-funcionario label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo-nome-funcionario input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Estilização de rótulos */
+label {
+    display: block; /* Faz o rótulo ocupar toda a linha */
+    margin: 5px 0 3px; /* Define espaçamento acima e abaixo do rótulo */
+    font-weight: bold; /* Torna o texto do rótulo em negrito */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Estilização de campos de entrada e seleção */
+input[type="text"], input[type="number"], input[type="date"], select {
+    width: calc(100% - 20px); /* Reduz a largura total para adicionar espaçamento interno */
+    padding: 8px; /* Adiciona espaçamento interno ao conteúdo do campo */
+    margin-bottom: 16px; /* Adiciona maior espaçamento inferior para separar do próximo elemento */
+    border-radius: 5px; /* Define bordas arredondadas */
+    border: 1px solid #ccc; /* Define uma borda cinza clara */
+}
+
+/* Estilização dos botões */
+button {
+    width: 100%; /* Faz os botões ocuparem 100% da largura do contêiner do botão */
+    padding: 10px; /* Adiciona espaçamento interno vertical */
+    background-color: #28a745; /* Define a cor verde padrão para o botão */
+    color: #ffffff; /* Define a cor do texto como branco */
+    border: none; /* Remove as bordas padrão do botão */
+    border-radius: 5px; /* Define bordas arredondadas */
+    cursor: pointer; /* Altera o cursor para indicar que o elemento é clicável */
+    font-weight: bold; /* Torna o texto do botão em negrito */
+    font-size: 13px; /* Define o tamanho da fonte do texto do botão */
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: #218838; /* Escurece a cor do botão ao passar o mouse */
+}
+
+/* Contêiner para alinhar os botões na mesma linha */
+.botao-container {
+    display: flex; /* Alinha os botões em linha usando flexbox */
+    justify-content: space-between; /* Adiciona espaço uniforme entre os botões */
+    gap: 10px; /* Define o espaçamento horizontal entre os botões */
+}
+
+/* Configuração de largura uniforme para os botões */
+#btn-cadastrar, #btn-alterar, #btn-voltar {
+    flex: 1; /* Faz com que todos os botões ocupem a mesma largura */
+}

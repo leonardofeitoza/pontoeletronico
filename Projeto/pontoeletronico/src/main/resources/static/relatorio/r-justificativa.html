@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Passaggio</title>
+    <link rel="icon" href="../img/loggo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Justificativa</title>
+    <link rel="stylesheet" href="../css/r-justificativa.css">
+</head>
+<body>
+<div class="container">
+    <h3>RELATORIO DE JUSTIFICATIVA</h3>
+
+    <!-- Campo para Nome do Funcionário -->
+    <label for="nome-funcionario">Nome do Funcionário:</label>
+    <div class="nome-funcionario-container">
+        <input type="text" id="nome-funcionario" name="nome-funcionario" placeholder="Selecione o funcionário" readonly>
+        <div class="seta-dropdown" onclick="mostrarFuncionarios()">▼</div>
+        <!-- Dropdown com campo de busca -->
+        <div id="dropdown-container" class="lista-funcionarios">
+            <input type="text" id="filtro-funcionarios" placeholder="Filtrar funcionários...">
+            <ul id="lista-funcionarios-ul"></ul>
+        </div>
+    </div>
+
+    <!-- Campo para ID do Funcionário -->
+    <label for="id-funcionario">ID:</label>
+    <input type="text" id="id-funcionario" name="id-funcionario" placeholder="ID do funcionário" readonly>
+
+    <!-- Campos para Data Inicial e Data Final -->
+    <div class="date-container">
+        <div>
+            <label for="data-inicial">Data Inicial:</label>
+            <input type="date" id="data-inicial" name="data-inicial">
+        </div>
+        <div>
+            <label for="data-final">Data Final:</label>
+            <input type="date" id="data-final" name="data-final">
+        </div>
+    </div>
+
+    <!-- Botões alinhados na mesma linha -->
+    <div class="botao-container">
+        <button type="submit" id="btn-visualizar-relatorio" onclick="visualizarRelatorio()">Individual</button>
+        <button type="button" id="btn-visualizar-relatorio-global" onclick="visualizarRelatorioGlobal()">Geral</button>
+        <button type="button" id="btn-voltar" onclick="location.href='/relatorio/bt-relatorio.html'" aria-label="Voltar para a página de relatórios">Voltar</button>
+    </div>
+
+    <!-- Mensagem de Erro -->
+    <div id="error-message" style="display: none; color: red;">Erro ao carregar o relatório. Tente novamente.</div>
+</div>
+
+<!-- Modal para exibir o PDF em tela inteira -->
+<div id="pdf-modal" class="pdf-modal">
+    <div class="pdf-modal-content">
+        <span class="close-pdf" onclick="fecharModalPdf()">&times;</span>
+        <iframe id="relatorio-pdf" title="Visualização do Relatório de Justificativa" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script src="../js/r-justificativa.js"></script>
+</body>
+</html>

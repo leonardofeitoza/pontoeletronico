@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #000; /* Preto */
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+button {
+    width: 100%; /* Mesma largura */
+    padding: 10px; /* Altura consistente */
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff; /* Texto branco */
+    background-color: #28a745; /* Verde padrão */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838; /* Verde mais escuro no hover */
+}
+
+button:last-child {
+    background-color: #28a745; /* Verde padrão o botão "Voltar" */
+}
+
+button:last-child:hover {
+    background-color: #218838; /* Verde mais escuro no hover */
+}

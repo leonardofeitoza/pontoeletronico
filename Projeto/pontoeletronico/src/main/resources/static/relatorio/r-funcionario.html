@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Passaggio</title>
+  <link rel="icon" href="../img/loggo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Funcionário Individual</title>
+  <link rel="stylesheet" href="../css/r-funcionario.css">
+</head>
+<body>
+<div class="container">
+  <h3>RELATORIO DE FUNCIONARIO</h3>
+  <div class="linha-id-nome">
+    <div class="campo-id">
+      <label for="id-funcionario">ID:</label>
+      <input type="text" id="id-funcionario" name="id-funcionario" placeholder="ID" readonly maxlength="3">
+    </div>
+
+    <div class="campo-nome-funcionario">
+      <label for="nome-funcionario">Nome do Funcionário:</label>
+      <div class="nome-funcionario-container">
+        <input type="text" id="nome-funcionario" name="nome-funcionario" placeholder="Selecione o funcionário" readonly>
+        <div class="seta-dropdown" onclick="mostrarFuncionarios()">▼</div>
+      </div>
+    </div>
+
+    <!-- Mover o dropdown-container para cá, dentro da linha-id-nome -->
+    <div id="dropdown-container" class="lista-funcionarios">
+      <input type="text" id="filtro-funcionarios" placeholder="Filtrar funcionários...">
+      <ul id="lista-funcionarios-ul"></ul>
+    </div>
+  </div>
+
+  <!-- Botões alinhados na mesma linha -->
+  <div class="botao-container">
+    <button type="submit" id="btn-visualizar-relatorio" onclick="visualizarRelatorio()">Individual</button>
+    <button type="button" id="btn-visualizar-relatorio-global" onclick="visualizarRelatorioGlobal()">Geral</button>
+    <button type="button" id="btn-voltar" onclick="location.href='/relatorio/bt-relatorio.html'">Voltar</button>
+  </div>
+</div>
+
+<!-- Modal para exibir o PDF em tela inteira -->
+<div id="pdf-modal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <span class="close-pdf" onclick="fecharModalPdf()">&times;</span>
+    <iframe id="relatorio-pdf" title="Visualização do Relatório de Funcionário" frameborder="0"></iframe>
+  </div>
+</div>
+
+<script src="../js/r-funcionario.js"></script>
+</body>
+</html>

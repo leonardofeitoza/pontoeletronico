@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[readonly] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Estilização dos botões */
+button {
+    width: 100%; /* Faz os botões ocuparem 100% da largura do contêiner do botão */
+    padding: 10px; /* Adiciona espaçamento interno vertical */
+    background-color: #28a745; /* Define a cor verde padrão para o botão */
+    color: #ffffff; /* Define a cor do texto como branco */
+    border: none; /* Remove as bordas padrão do botão */
+    border-radius: 5px; /* Define bordas arredondadas */
+    cursor: pointer; /* Altera o cursor para indicar que o elemento é clicável */
+    font-weight: bold; /* Torna o texto do botão em negrito */
+    font-size: 13px; /* Define o tamanho da fonte do texto do botão */
+}
+
+/* Contêiner para alinhar os botões na mesma linha */
+.botao-container {
+    display: flex; /* Alinha os botões em linha usando flexbox */
+    justify-content: space-between; /* Espaçamento uniforme entre os botões */
+    gap: 10px; /* Espaçamento horizontal entre os botões */
+}
+
+/* Configuração de largura uniforme para os botões */
+button {
+    flex: 1; /* Faz com que todos os botões ocupem a mesma largura */
+    padding: 10px; /* Adiciona espaçamento interno vertical */
+    background-color: #28a745; /* Cor verde padrão */
+    color: #ffffff; /* Cor do texto branco */
+    border: none; /* Remove bordas padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Indica clicável */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 13px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto no botão */
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: #218838; /* Escurece a cor no hover */
+}
+
+
+/* Contêiner para alinhar ID e Nome do Funcionário */
+.linha-id-nome {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento consistente entre os campos */
+    margin-bottom: 15px;
+}
+
+.campo-id {
+    flex: 0 0 80px; /* Campo ID com largura fixa */
+}
+
+.campo-id input {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid #007bff;
+}
+
+.campo-nome-funcionario {
+    flex: 1; /* O campo Nome do Funcionário ocupa o espaço restante */
+    position: relative; /* Necessário para posicionar a seta */
+}
+
+.campo-nome-funcionario input {
+    width: calc(100% - 0px); /* Ajusta a largura para acomodar a seta */
+    padding-right: 30px;
+    border: 2px solid #007bff;
+    background-color: #e7f3ff;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.campo-nome-funcionario input:hover {
+    background-color: #d6ebff;
+    border-color: #0056b3;
+}
+
+/* Estilização da seta */
+.seta-dropdown {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-10%);
+    right: 15px;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Lista de funcionários */
+.lista-funcionarios {
+    position: absolute;
+    top: 100%;
+    left: -90px; /* Ajusta para começar abaixo do campo ID */
+    right: 0; /* Mantém a largura até o final */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    width: calc(100% + 50px); /* Aumenta a largura para incluir o espaço do campo ID */
+}
+
+/* Itens da lista */
+.lista-funcionarios li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.lista-funcionarios li:hover {
+    background-color: #f1f1f1;
+}
+
+#dropdown-container {
+    position: absolute;
+    top: 120%;
+    left: -90px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 340px; /* Altura mínima garantida */
+    max-height: 340px; /* Altura máxima permitida */
+    overflow-y: auto; /* Permite rolagem se ultrapassar a altura máxima */
+    display: none;
+    z-index: 1000;
+    width: calc(100% + 90px); /* Ajusta a largura para incluir o campo ID */
+}
+
+/* Estilização do campo de filtro */
+#filtro-funcionarios {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Estilo dos itens da lista */
+.lista-funcionarios li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.lista-funcionarios li:hover {
+    background-color: #f1f1f1;
+}
+
+
+

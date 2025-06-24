@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px; /* Ajuste para manter o padrão */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+button {
+    width: 100%; /* Mesma largura do dashboard */
+    padding: 10px; /* Mesma altura do dashboard */
+    background-color: #28a745; /* Cor verde padrão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; /* Mesma fonte do dashboard */
+    font-weight: bold;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #218838; /* Cor de hover consistente */
+}
